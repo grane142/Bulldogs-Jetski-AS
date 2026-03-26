@@ -1,0 +1,2517 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulldogg Jetski - Premium Vannscooter Utleie</title>
+    <meta name="description" content="Opplev spenningen med vannscooter. Bulldogg Jetski tilbyr premium vannscooter utleie med førsteklasses service.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://framerusercontent.com/assets/FKDA2dJzM5JKsEGMQKYqKkmHaA.woff2') format('woff2');
+            font-weight: 100 900;
+            font-display: swap;
+            font-style: normal;
+        }
+
+        /* ========== RESET & BASE ========== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --blue: #004b91;
+            --dark-blue: #00376b;
+            --black: #000000;
+            --white: #ffffff;
+            --off-white: #f5f5f5;
+            --gray-light: #e0e0e0;
+            --gray-text: #999999;
+            --gray-mid: #666666;
+            --border-color: rgba(255,255,255,0.15);
+            --border-dark: rgba(0,0,0,0.1);
+            --font-geist: 'Geist', sans-serif;
+            --font-inter: 'Inter', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-inter);
+            color: var(--black);
+            background: var(--white);
+            overflow-x: hidden;
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: opacity 0.2s;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+        img, video {
+            display: block;
+            max-width: 100%;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-family: inherit;
+        }
+
+        /* ========== UTILITY ========== */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+        }
+
+        .section-label {
+            font-family: var(--font-inter);
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 100px;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+
+        .section-label--dark {
+            color: var(--black);
+            border-color: var(--border-dark);
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--blue);
+            color: var(--white);
+            font-family: var(--font-inter);
+            font-size: 15px;
+            font-weight: 500;
+            padding: 14px 28px;
+            border-radius: 100px;
+            transition: background 0.3s, transform 0.2s;
+            white-space: nowrap;
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-blue);
+            opacity: 1;
+            transform: translateY(-1px);
+        }
+
+        .btn-primary svg {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--white);
+            font-family: var(--font-inter);
+            font-size: 15px;
+            font-weight: 500;
+            padding: 14px 28px;
+            border-radius: 100px;
+            border: 1px solid var(--border-color);
+            transition: background 0.3s, transform 0.2s;
+            white-space: nowrap;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.05);
+            opacity: 1;
+            transform: translateY(-1px);
+        }
+
+        .btn-outline--dark {
+            color: var(--black);
+            border-color: var(--border-dark);
+        }
+
+        .btn-outline--dark:hover {
+            background: rgba(0,0,0,0.05);
+        }
+
+        .btn-outline svg {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        /* Arrow icon used in buttons */
+        .arrow-icon {
+            display: inline-flex;
+        }
+
+        /* ========== SCROLL ANIMATIONS ========== */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-delay-1 { transition-delay: 0.1s; }
+        .animate-delay-2 { transition-delay: 0.2s; }
+        .animate-delay-3 { transition-delay: 0.3s; }
+        .animate-delay-4 { transition-delay: 0.4s; }
+
+        /* ========== NAVIGATION ========== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            transition: background 0.3s, backdrop-filter 0.3s;
+        }
+
+        .nav.scrolled {
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .nav__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            border: 1px solid var(--border-color);
+            border-radius: 100px;
+            height: 60px;
+            padding: 0 8px 0 24px;
+            transition: border-color 0.3s;
+        }
+
+        .nav.scrolled .nav__inner {
+            border-color: var(--border-dark);
+        }
+
+        .nav.scrolled .nav__logo,
+        .nav.scrolled .nav__links a {
+            color: var(--black);
+        }
+
+        .nav.scrolled .nav__mobile-toggle span {
+            background: var(--black);
+        }
+
+        .nav__logo {
+            font-family: var(--font-geist);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: -0.5px;
+            white-space: nowrap;
+        }
+
+        .nav__links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav__links a {
+            font-family: var(--font-inter);
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--white);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: opacity 0.2s;
+        }
+
+        .nav__links a:hover {
+            opacity: 0.7;
+        }
+
+        .nav__cta .btn-primary {
+            padding: 10px 24px;
+            font-size: 14px;
+        }
+
+        .nav__mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        .nav__mobile-toggle span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--white);
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .nav__mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.97);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+        }
+
+        .nav__mobile-menu.active {
+            display: flex;
+        }
+
+        .nav__mobile-menu a {
+            font-family: var(--font-inter);
+            font-size: 24px;
+            font-weight: 400;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav__mobile-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .nav__mobile-close::before,
+        .nav__mobile-close::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+        }
+
+        .nav__mobile-close::before { transform: rotate(45deg); }
+        .nav__mobile-close::after { transform: rotate(-45deg); }
+
+        /* ========== HERO ========== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero__video-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero__video-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero__video-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%);
+        }
+
+        .hero__content {
+            position: relative;
+            z-index: 1;
+            max-width: 850px;
+            padding: 0 24px;
+        }
+
+        .hero__label {
+            font-family: var(--font-inter);
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 24px;
+            opacity: 0;
+            animation: fadeInUp 0.8s 0.3s forwards;
+        }
+
+        .hero__title {
+            font-family: var(--font-geist);
+            font-size: clamp(42px, 7vw, 80px);
+            font-weight: 400;
+            line-height: 1.05;
+            letter-spacing: -2px;
+            color: var(--white);
+            margin-bottom: 24px;
+            opacity: 0;
+            animation: fadeInUp 0.8s 0.5s forwards;
+        }
+
+        .hero__subtitle {
+            font-family: var(--font-inter);
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.8);
+            max-width: 500px;
+            margin: 0 auto 40px;
+            opacity: 0;
+            animation: fadeInUp 0.8s 0.7s forwards;
+        }
+
+        .hero__cta {
+            opacity: 0;
+            animation: fadeInUp 0.8s 0.9s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========== ABOUT SECTION ========== */
+        .about {
+            padding: 140px 0;
+            background: #F8F8F8;
+        }
+
+        .about__top {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: start;
+            margin-bottom: 60px;
+        }
+
+        .about__left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .about__label-text {
+            font-family: var(--font-inter);
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--black);
+            margin-bottom: 24px;
+        }
+
+        .about__text {
+            font-family: var(--font-geist);
+            font-size: clamp(26px, 3.2vw, 38px);
+            font-weight: 400;
+            line-height: 1.3;
+            letter-spacing: -1px;
+            color: var(--black);
+            max-width: 480px;
+            margin-bottom: 32px;
+        }
+
+        .about__btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--black);
+            color: var(--white);
+            font-family: var(--font-inter);
+            font-size: 15px;
+            font-weight: 500;
+            padding: 14px 32px;
+            border-radius: 100px;
+            transition: background 0.3s, transform 0.2s;
+            white-space: nowrap;
+        }
+
+        .about__btn:hover {
+            background: #222;
+            opacity: 1;
+            transform: translateY(-1px);
+        }
+
+        .about__right-image {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            width: 100%;
+            aspect-ratio: 4/3;
+        }
+
+        .about__right-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .about__right-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 32px;
+            background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+            text-align: center;
+        }
+
+        .about__right-overlay p {
+            font-family: var(--font-inter);
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--white);
+        }
+
+        .about__bottom-desc {
+            font-family: var(--font-inter);
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--gray-mid);
+            max-width: 550px;
+            margin-bottom: 80px;
+        }
+
+        .about__stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+
+        .about__stat {
+            text-align: center;
+            padding: 40px 20px;
+            border-left: 1px solid var(--border-dark);
+        }
+
+        .about__stat:first-child {
+            border-left: none;
+        }
+
+        .about__stat-number {
+            font-family: var(--font-geist);
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 400;
+            letter-spacing: -2px;
+            color: var(--black);
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .about__stat-label {
+            font-family: var(--font-inter);
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--gray-text);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ========== BOATS/JETSKI OVERVIEW ========== */
+        .overview {
+            padding: 140px 0;
+            background: #FFFFFF;
+            border-top: 1px solid var(--border-dark);
+        }
+
+        .overview__header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .overview__label {
+            font-family: var(--font-inter);
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--black);
+            margin-bottom: 32px;
+        }
+
+        .overview__boat-name {
+            font-family: var(--font-geist);
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            color: var(--black);
+            margin-bottom: 16px;
+            transition: opacity 0.4s;
+        }
+
+        .overview__boat-desc {
+            font-family: var(--font-inter);
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--gray-mid);
+            max-width: 500px;
+            margin: 0 auto 28px;
+            transition: opacity 0.4s;
+        }
+
+        .overview__boat-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--black);
+            color: var(--white);
+            font-family: var(--font-inter);
+            font-size: 15px;
+            font-weight: 500;
+            padding: 14px 32px;
+            border-radius: 100px;
+            transition: background 0.3s, transform 0.2s;
+            white-space: nowrap;
+        }
+
+        .overview__boat-btn:hover {
+            background: #222;
+            opacity: 1;
+            transform: translateY(-1px);
+        }
+
+        .overview__image-wrapper {
+            position: relative;
+            margin-top: 60px;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .overview__image-wrapper img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            display: block;
+            transition: opacity 0.5s;
+        }
+
+        .overview__nav {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            padding: 0 24px;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .overview__nav-btn {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.4);
+            background: rgba(0,0,0,0.3);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s, border-color 0.3s;
+            cursor: pointer;
+            pointer-events: auto;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .overview__nav-btn:hover {
+            background: rgba(0,0,0,0.5);
+            border-color: rgba(255,255,255,0.6);
+        }
+
+        .overview__nav-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .overview__stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            margin-top: 60px;
+            border-top: 1px solid var(--border-dark);
+        }
+
+        .overview__stat {
+            text-align: center;
+            padding: 40px 20px;
+            border-left: 1px solid var(--border-dark);
+        }
+
+        .overview__stat:first-child {
+            border-left: none;
+        }
+
+        .overview__stat-label {
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--gray-text);
+            margin-bottom: 8px;
+        }
+
+        .overview__stat-value {
+            font-family: var(--font-geist);
+            font-size: clamp(24px, 3vw, 32px);
+            font-weight: 400;
+            letter-spacing: -1px;
+            color: var(--black);
+        }
+
+        /* ========== DISCOVER SECTION ========== */
+        .discover {
+            padding: 140px 0;
+            background: var(--white);
+            border-top: 1px solid var(--border-dark);
+        }
+
+        .discover__header {
+            text-align: left;
+            margin-bottom: 60px;
+        }
+
+        .discover__header .section-label {
+            margin-bottom: 24px;
+        }
+
+        .discover__title {
+            font-family: var(--font-geist);
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+            color: var(--black);
+            max-width: 600px;
+        }
+
+        .discover__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .discover__card {
+            border: 1px solid var(--border-dark);
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--white);
+            transition: border-color 0.3s;
+        }
+
+        .discover__card:hover {
+            border-color: rgba(0,0,0,0.3);
+        }
+
+        .discover__card-img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+        }
+
+        .discover__card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+
+        .discover__card:hover .discover__card-img img {
+            transform: scale(1.05);
+        }
+
+        .discover__card-body {
+            padding: 28px;
+        }
+
+        .discover__card-label {
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--gray-text);
+            margin-bottom: 8px;
+        }
+
+        .discover__card-name {
+            font-family: var(--font-geist);
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--black);
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .discover__card-desc {
+            font-family: var(--font-inter);
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--gray-text);
+            margin-bottom: 20px;
+        }
+
+        .discover__card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .discover__card-tag {
+            font-family: var(--font-inter);
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--gray-mid);
+            border: 1px solid var(--border-dark);
+            border-radius: 100px;
+            padding: 6px 14px;
+            letter-spacing: 0.5px;
+        }
+
+        .discover__card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-inter);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--black);
+            background: transparent;
+            border: 1px solid var(--border-dark);
+            border-radius: 100px;
+            padding: 12px 24px;
+            transition: background 0.3s, border-color 0.3s;
+        }
+
+        .discover__card-link:hover {
+            background: rgba(0,0,0,0.05);
+            border-color: rgba(0,0,0,0.3);
+            opacity: 1;
+        }
+
+        .discover__card-link svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .discover__card-price {
+            font-family: var(--font-geist);
+            font-size: clamp(32px, 4vw, 44px);
+            font-weight: 400;
+            letter-spacing: -1.5px;
+            color: var(--black);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .discover__card-price-sub {
+            font-family: var(--font-inter);
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--gray-text);
+            margin-bottom: 20px;
+        }
+
+        .discover__card-features {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .discover__card-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-inter);
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--gray-mid);
+        }
+
+        .discover__card-feature svg {
+            width: 18px;
+            height: 18px;
+            color: var(--blue);
+            flex-shrink: 0;
+        }
+
+        .discover__areas {
+            margin-top: 60px;
+            text-align: center;
+            padding: 40px;
+            border: 1px solid var(--border-dark);
+            border-radius: 16px;
+            background: #F8F8F8;
+        }
+
+        .discover__areas-title {
+            font-family: var(--font-geist);
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--black);
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .discover__areas-text {
+            font-family: var(--font-inter);
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--gray-mid);
+        }
+
+        .discover__areas-locations {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .discover__areas-location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-inter);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--black);
+        }
+
+        .discover__areas-location svg {
+            width: 16px;
+            height: 16px;
+            color: var(--blue);
+        }
+
+        /* ========== INTERIOR/FEATURE SECTION ========== */
+        .feature {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .feature__bg {
+            position: absolute;
+            inset: 0;
+        }
+
+        .feature__bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .feature__bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%);
+        }
+
+        .feature__content {
+            position: relative;
+            z-index: 1;
+            max-width: 520px;
+            padding: 100px 0;
+        }
+
+        .feature__content .section-label {
+            margin-bottom: 24px;
+        }
+
+        .feature__title {
+            font-family: var(--font-geist);
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .feature__desc {
+            font-family: var(--font-inter);
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 32px;
+        }
+
+        /* ========== FOUNDER SECTION ========== */
+        .founder {
+            padding: 140px 0;
+            background: var(--white);
+            color: var(--black);
+        }
+
+        .founder__inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .founder__left .section-label--dark {
+            margin-bottom: 24px;
+        }
+
+        .founder__title {
+            font-family: var(--font-geist);
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+            color: var(--black);
+            margin-bottom: 20px;
+        }
+
+        .founder__desc {
+            font-family: var(--font-inter);
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--gray-mid);
+            margin-bottom: 40px;
+        }
+
+        .founder__benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .founder__benefit {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .founder__benefit-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .founder__benefit-icon svg {
+            width: 18px;
+            height: 18px;
+            color: var(--white);
+        }
+
+        .founder__benefit-text h4 {
+            font-family: var(--font-geist);
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--black);
+            margin-bottom: 4px;
+        }
+
+        .founder__benefit-text p {
+            font-family: var(--font-inter);
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--gray-mid);
+        }
+
+        .founder__right {
+            position: relative;
+        }
+
+        .founder__image {
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+        }
+
+        .founder__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .founder__quote {
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            background: var(--white);
+            border: 1px solid var(--border-dark);
+            border-radius: 16px;
+            padding: 28px;
+            max-width: 320px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .founder__quote-text {
+            font-family: var(--font-inter);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--black);
+            font-style: italic;
+            margin-bottom: 16px;
+        }
+
+        .founder__quote-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .founder__quote-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: var(--gray-light);
+        }
+
+        .founder__quote-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .founder__quote-name {
+            font-family: var(--font-geist);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--black);
+        }
+
+        .founder__quote-role {
+            font-family: var(--font-inter);
+            font-size: 12px;
+            color: var(--gray-mid);
+        }
+
+        /* ========== TESTIMONIALS ========== */
+        .testimonials {
+            padding: 140px 0;
+            background: var(--white);
+            border-top: 1px solid var(--border-dark);
+        }
+
+        .testimonials__header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-bottom: 60px;
+        }
+
+        .testimonials__header-left {
+            max-width: 500px;
+        }
+
+        .testimonials__header .section-label {
+            margin-bottom: 24px;
+        }
+
+        .testimonials__title {
+            font-family: var(--font-geist);
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+            color: var(--black);
+        }
+
+        .testimonials__nav {
+            display: flex;
+            gap: 12px;
+        }
+
+        .testimonials__nav-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 1px solid var(--border-dark);
+            background: transparent;
+            color: var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s, border-color 0.3s;
+            cursor: pointer;
+        }
+
+        .testimonials__nav-btn:hover {
+            background: rgba(0,0,0,0.05);
+            border-color: rgba(0,0,0,0.3);
+        }
+
+        .testimonials__nav-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .testimonials__carousel {
+            overflow: hidden;
+        }
+
+        .testimonials__track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .testimonials__slide {
+            min-width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            border: 1px solid var(--border-dark);
+            border-radius: 16px;
+            padding: 32px;
+            background: var(--white);
+        }
+
+        .testimonial-card__stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-card__stars svg {
+            width: 16px;
+            height: 16px;
+            fill: #f5a623;
+            color: #f5a623;
+        }
+
+        .testimonial-card__text {
+            font-family: var(--font-inter);
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--gray-mid);
+            margin-bottom: 24px;
+        }
+
+        .testimonial-card__author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-card__avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: var(--gray-light);
+        }
+
+        .testimonial-card__avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-card__name {
+            font-family: var(--font-geist);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--black);
+        }
+
+        .testimonial-card__role {
+            font-family: var(--font-inter);
+            font-size: 13px;
+            color: var(--gray-text);
+        }
+
+        /* ========== CTA SECTION ========== */
+        .cta {
+            position: relative;
+            padding: 140px 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .cta__video-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .cta__video-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cta__video-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.65);
+        }
+
+        .cta__content {
+            position: relative;
+            z-index: 1;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .cta__title {
+            font-family: var(--font-geist);
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .cta__desc {
+            font-family: var(--font-inter);
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 40px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            padding: 80px 0 40px;
+            background: var(--white);
+            border-top: 1px solid var(--border-dark);
+        }
+
+        .footer__top {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer__brand {
+            max-width: 300px;
+        }
+
+        .footer__logo {
+            font-family: var(--font-geist);
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .footer__brand-desc {
+            font-family: var(--font-inter);
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--gray-text);
+            margin-bottom: 24px;
+        }
+
+        .footer__social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer__social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--border-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s, border-color 0.3s;
+        }
+
+        .footer__social a:hover {
+            background: rgba(0,0,0,0.05);
+            border-color: rgba(0,0,0,0.3);
+            opacity: 1;
+        }
+
+        .footer__social svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--black);
+            color: var(--black);
+        }
+
+        .footer__col-title {
+            font-family: var(--font-geist);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--black);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer__col-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            list-style: none;
+        }
+
+        .footer__col-links a {
+            font-family: var(--font-inter);
+            font-size: 14px;
+            font-weight: 300;
+            color: var(--gray-text);
+            transition: color 0.2s;
+        }
+
+        .footer__col-links a:hover {
+            color: var(--black);
+            opacity: 1;
+        }
+
+        .footer__newsletter {
+            margin-bottom: 0;
+        }
+
+        .footer__newsletter-title {
+            font-family: var(--font-geist);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--black);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer__newsletter-desc {
+            font-family: var(--font-inter);
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--gray-text);
+            margin-bottom: 16px;
+        }
+
+        .footer__newsletter-form {
+            display: flex;
+            gap: 8px;
+        }
+
+        .footer__newsletter-input {
+            flex: 1;
+            background: transparent;
+            border: 1px solid var(--border-dark);
+            border-radius: 100px;
+            padding: 12px 20px;
+            font-family: var(--font-inter);
+            font-size: 14px;
+            color: var(--black);
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .footer__newsletter-input::placeholder {
+            color: var(--gray-text);
+        }
+
+        .footer__newsletter-input:focus {
+            border-color: rgba(0,0,0,0.4);
+        }
+
+        .footer__newsletter-btn {
+            background: var(--blue);
+            color: var(--white);
+            border: none;
+            border-radius: 100px;
+            padding: 12px 24px;
+            font-family: var(--font-inter);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s;
+            white-space: nowrap;
+        }
+
+        .footer__newsletter-btn:hover {
+            background: var(--dark-blue);
+        }
+
+        .footer__bottom {
+            border-top: 1px solid var(--border-dark);
+            padding-top: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer__copyright {
+            font-family: var(--font-inter);
+            font-size: 13px;
+            color: var(--gray-text);
+        }
+
+        .footer__bottom-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .footer__bottom-links a {
+            font-family: var(--font-inter);
+            font-size: 13px;
+            color: var(--gray-text);
+        }
+
+        .footer__bottom-links a:hover {
+            color: var(--black);
+            opacity: 1;
+        }
+
+        /* ========== RESPONSIVE - TABLET ========== */
+        @media (max-width: 1024px) {
+            .nav__links {
+                display: none;
+            }
+
+            .nav__mobile-toggle {
+                display: flex;
+            }
+
+            .about__top {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about__stats {
+                margin-top: 60px;
+            }
+
+            .overview__stats {
+                grid-template-columns: 1fr;
+            }
+
+            .overview__stat {
+                border-left: none;
+                border-top: 1px solid var(--border-dark);
+            }
+
+            .overview__stat:first-child {
+                border-top: none;
+            }
+
+            .discover__grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .founder__inner {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .founder__right {
+                order: -1;
+            }
+
+            .founder__quote {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                margin-top: 24px;
+                max-width: 100%;
+            }
+
+            .testimonials__header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 24px;
+            }
+
+            .testimonials__slide {
+                grid-template-columns: 1fr;
+            }
+
+            .footer__top {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+
+            .footer__bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+        }
+
+        /* ========== RESPONSIVE - PHONE ========== */
+        @media (max-width: 640px) {
+            .nav__inner {
+                height: 52px;
+                padding: 0 6px 0 18px;
+            }
+
+            .nav__logo {
+                font-size: 17px;
+            }
+
+            .nav__cta .btn-primary {
+                padding: 8px 18px;
+                font-size: 13px;
+            }
+
+            .hero__title {
+                letter-spacing: -1px;
+            }
+
+            .hero__subtitle {
+                font-size: 16px;
+            }
+
+            .about {
+                padding: 80px 0;
+            }
+
+            .about__stats {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .about__stat {
+                border-left: none;
+                border-top: 1px solid var(--border-dark);
+                padding: 28px 20px;
+            }
+
+            .about__stat:first-child {
+                border-top: none;
+            }
+
+            .overview {
+                padding: 80px 0;
+            }
+
+            .discover {
+                padding: 80px 0;
+            }
+
+            .feature__content {
+                padding: 60px 0;
+            }
+
+            .founder {
+                padding: 80px 0;
+            }
+
+            .testimonials {
+                padding: 80px 0;
+            }
+
+            .cta {
+                padding: 80px 0;
+            }
+
+            .footer__top {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer__newsletter-form {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-outline {
+                padding: 12px 24px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="nav" id="nav">
+        <div class="nav__inner">
+            <a href="#" class="nav__logo">Bulldogg Jetski</a>
+            <ul class="nav__links">
+                <li><a href="#about">Om Oss</a></li>
+                <li><a href="#overview">Vannscootere</a></li>
+                <li><a href="#discover">Priser</a></li>
+                <li><a href="#testimonials">Anmeldelser</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+            <div class="nav__cta">
+                <a href="#contact" class="btn-primary">
+                    Book Nå
+                    <span class="arrow-icon">
+                        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+            <div class="nav__mobile-toggle" id="mobileToggle" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="nav__mobile-menu" id="mobileMenu">
+        <div class="nav__mobile-close" id="mobileClose" aria-label="Close menu"></div>
+        <a href="#about" class="mobile-link">Om Oss</a>
+        <a href="#overview" class="mobile-link">Vannscootere</a>
+        <a href="#discover" class="mobile-link">Priser</a>
+        <a href="#testimonials" class="mobile-link">Anmeldelser</a>
+        <a href="#contact" class="mobile-link">Kontakt</a>
+        <a href="#contact" class="btn-primary" style="margin-top: 20px;">
+            Book Nå
+            <span class="arrow-icon">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+        </a>
+    </div>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero">
+        <div class="hero__video-bg">
+            <video autoplay muted loop playsinline>
+                <source src="https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69c51a9e7794bf160e36f43e.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero__content">
+            <p class="hero__label">Premium Vannscooter Utleie</p>
+            <h1 class="hero__title">Opplev spenningen på vannet.</h1>
+            <p class="hero__subtitle">Lei en vannscooter og opplev friheten og adrenalinet på sjøen med Bulldogg Jetski.</p>
+            <div class="hero__cta">
+                <a href="#overview" class="btn-outline">
+                    Utforsk Vannscootere
+                    <span class="arrow-icon">
+                        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about__top">
+                <div class="about__left animate-on-scroll">
+                    <p class="about__label-text">Uanstrengt &bull; Eventyrlig &bull; Premium</p>
+                    <p class="about__text">Vi tilbyr en sømløs vannscooteropplevelse designet for frihet, komfort og oppdagelse.</p>
+                    <a href="#overview" class="about__btn">Om Oss</a>
+                </div>
+                <div class="about__right animate-on-scroll animate-delay-1">
+                    <div class="about__right-image">
+                        <img src="https://images.pexels.com/photos/1430672/pexels-photo-1430672.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Vannscooter på sjøen">
+                        <div class="about__right-overlay">
+                            <p>Vårt lidenskapelige team er dedikert til sikkerhet, komfort og service. Uansett hvor vannet kaller, er Bulldogg Jetski her for å hjelpe.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="about__bottom-desc animate-on-scroll animate-delay-2">Bulldogg Jetski er mer enn bare en utleietjeneste — det er din inngangsport til uforglemmelige opplevelser på vannet. Vi startet med en enkel visjon: å gjøre vannscooterkjøring tilgjengelig, stilfullt og stressfritt. I dag hjelper vi eventyrere, familier og utforskere med å skape minner som varer livet ut.</p>
+
+            <div class="about__stats animate-on-scroll animate-delay-3">
+                <div class="about__stat">
+                    <div class="about__stat-number">15+</div>
+                    <div class="about__stat-label">Vannscootere i Flåten</div>
+                </div>
+                <div class="about__stat">
+                    <div class="about__stat-number">2K+</div>
+                    <div class="about__stat-label">Fornøyde Kunder</div>
+                </div>
+                <div class="about__stat">
+                    <div class="about__stat-number">8+</div>
+                    <div class="about__stat-label">Års Erfaring</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== OVERVIEW ========== -->
+    <section class="overview" id="overview">
+        <div class="container">
+            <div class="overview__header animate-on-scroll">
+                <p class="overview__label">Vannscooter Oversikt</p>
+                <h2 class="overview__boat-name" id="overviewName">Yamaha WaveRunner</h2>
+                <p class="overview__boat-desc" id="overviewDesc">Perfekt for familier og nybegynnere. Stabil, komfortabel vannscooter med plass til 3 passasjerer og enkel håndtering på åpent vann.</p>
+                <a href="#contact" class="overview__boat-btn">
+                    Se Mer
+                    <svg viewBox="0 0 16 16" fill="none" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+            </div>
+
+            <div class="overview__image-wrapper animate-on-scroll animate-delay-1">
+                <div class="overview__nav">
+                    <button class="overview__nav-btn" id="overviewPrev" aria-label="Forrige">
+                        <svg viewBox="0 0 16 16" fill="none"><path d="M10 4l-4 4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <button class="overview__nav-btn" id="overviewNext" aria-label="Neste">
+                        <svg viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                </div>
+                <img id="overviewImage" src="https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69c538594880be32be7897a3.webp" alt="Yamaha WaveRunner">
+            </div>
+
+            <div class="overview__stats animate-on-scroll animate-delay-2">
+                <div class="overview__stat">
+                    <div class="overview__stat-label">Motor</div>
+                    <div class="overview__stat-value" id="overviewStat1">180 HK</div>
+                </div>
+                <div class="overview__stat">
+                    <div class="overview__stat-label">Topphastighet</div>
+                    <div class="overview__stat-value" id="overviewStat2">105 km/t</div>
+                </div>
+                <div class="overview__stat">
+                    <div class="overview__stat-label">Passasjerer</div>
+                    <div class="overview__stat-value" id="overviewStat3">Opptil 3</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PRISPAKKER ========== -->
+    <section class="discover" id="discover">
+        <div class="container">
+            <div class="discover__header animate-on-scroll" style="display:flex;align-items:flex-end;justify-content:space-between;text-align:left;">
+                <div>
+                    <span class="section-label section-label--dark">Priser &bull; Pakker</span>
+                    <h2 class="discover__title" style="margin-top:24px;margin-left:0;">Velg pakken som passer deg</h2>
+                </div>
+                <a href="#contact" class="discover__card-link" style="flex-shrink:0;">
+                    Book Nå
+                    <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+            </div>
+
+            <div class="discover__grid" style="grid-template-columns: repeat(2, 1fr);">
+                <!-- Halvdag -->
+                <div class="discover__card animate-on-scroll animate-delay-1">
+                    <div class="discover__card-img">
+                        <img src="https://images.pexels.com/photos/1430672/pexels-photo-1430672.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Halvdags pakke">
+                    </div>
+                    <div class="discover__card-body">
+                        <h3 class="discover__card-name">Halvdag</h3>
+                        <div class="discover__card-price">1 750,-</div>
+                        <p class="discover__card-price-sub">eks. mva / per vannscooter</p>
+                        <div class="discover__card-features">
+                            <div class="discover__card-feature">
+                                <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Opptil 4 timer på vannet
+                            </div>
+                            <div class="discover__card-feature">
+                                <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Sikkerhetsutstyr inkludert
+                            </div>
+                            <div class="discover__card-feature">
+                                <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Opplæring og instruksjon
+                            </div>
+                            <div class="discover__card-feature">
+                                <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Levering innenfor Oslo, Asker og Drøbak
+                            </div>
+                        </div>
+                        <a href="#contact" class="discover__card-link">
+                            Book Halvdag
+                            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- Heldag -->
+                <div class="discover__card animate-on-scroll animate-delay-2">
+                    <div class="discover__card-img">
+                        <img src="https://images.pexels.com/photos/1007836/pexels-photo-1007836.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Heldags pakke">
+                    </div>
+                    <div class="discover__card-body">
+                        <h3 class="discover__card-name">Heldag</h3>
+                        <div class="discover__card-price">3 500,-</div>
+                        <p class="discover__card-price-sub">eks. mva / per vannscooter</p>
+                        <div class="discover__card-features">
+                            <div class="discover__card-feature">
+                                <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Full dag på vannet
+                            </div>
+                            <div class="discover__card-feature">
+                                <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Sikkerhetsutstyr inkludert
+                            </div>
+                            <div class="discover__card-feature">
+                                <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Opplæring og instruksjon
+                            </div>
+                            <div class="discover__card-feature">
+                                <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Levering innenfor Oslo, Asker og Drøbak
+                            </div>
+                            <div class="discover__card-feature">
+                                <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Beste verdi for pengene
+                            </div>
+                        </div>
+                        <a href="#contact" class="discover__card-link">
+                            Book Heldag
+                            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Områder -->
+            <div class="discover__areas animate-on-scroll animate-delay-3">
+                <div class="discover__areas-title">Vi dekker Oslofjorden</div>
+                <p class="discover__areas-text">Leveres til der du vil innenfor våre områder</p>
+                <div class="discover__areas-locations">
+                    <div class="discover__areas-location">
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Oslo
+                    </div>
+                    <div class="discover__areas-location">
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Asker
+                    </div>
+                    <div class="discover__areas-location">
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Drøbak
+                    </div>
+                </div>
+                <p class="discover__areas-text" style="margin-top:12px;font-size:13px;">Alle priser eks. mva</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FEATURE/INTERIOR ========== -->
+    <section class="feature">
+        <div class="feature__bg">
+            <img src="https://images.pexels.com/photos/1430676/pexels-photo-1430676.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Vannscooter på sjøen">
+        </div>
+        <div class="container">
+            <div class="feature__content animate-on-scroll">
+                <span class="section-label">Utstyrt For Eventyr</span>
+                <h2 class="feature__title" style="margin-top:24px;">Førsteklasses utstyr og sikkerhet</h2>
+                <p class="feature__desc">Alle våre vannscootere er utstyrt med det nyeste innen sikkerhetsutstyr, GPS-navigasjon og komfortfunksjoner for en trygg og spennende opplevelse.</p>
+                <a href="#contact" class="btn-primary">
+                    Book Din Tur
+                    <span class="arrow-icon">
+                        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOUNDER ========== -->
+    <section class="founder" id="founder">
+        <div class="container">
+            <div class="founder__inner">
+                <div class="founder__left animate-on-scroll">
+                    <span class="section-label section-label--dark">Vår Grunnlegger</span>
+                    <h2 class="founder__title" style="margin-top:24px;">Lidenskap for vannsport og eventyr</h2>
+                    <p class="founder__desc">Med over 8 års erfaring innen vannsport og utleie har vi bygget Bulldogg Jetski med fokus på sikkerhet, kvalitet og uforglemmelige opplevelser for alle våre kunder.</p>
+
+                    <div class="founder__benefits">
+                        <div class="founder__benefit">
+                            <div class="founder__benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="founder__benefit-text">
+                                <h4>Sikkerhet Først</h4>
+                                <p>Fullt forsikret flåte med profesjonell sikkerhetsopplæring før hver tur.</p>
+                            </div>
+                        </div>
+                        <div class="founder__benefit">
+                            <div class="founder__benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="founder__benefit-text">
+                                <h4>Premium Utstyr</h4>
+                                <p>Kun toppmodeller fra ledende produsenter, vedlikeholdt til perfeksjon.</p>
+                            </div>
+                        </div>
+                        <div class="founder__benefit">
+                            <div class="founder__benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="founder__benefit-text">
+                                <h4>Personlig Service</h4>
+                                <p>Dedikert team som sørger for at hver kunde får en skreddersydd opplevelse.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="founder__right animate-on-scroll animate-delay-2">
+                    <div class="founder__image">
+                        <img src="https://images.pexels.com/photos/1576610/pexels-photo-1576610.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Grunnlegger">
+                    </div>
+                    <div class="founder__quote">
+                        <p class="founder__quote-text">"Vår visjon er å gi alle muligheten til å oppleve friheten og spenningen på vannet, uansett erfaring."</p>
+                        <div class="founder__quote-author">
+                            <div class="founder__quote-avatar">
+                                <img src="https://images.pexels.com/photos/1576610/pexels-photo-1576610.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Avatar">
+                            </div>
+                            <div>
+                                <div class="founder__quote-name">Bulldogg Jetski</div>
+                                <div class="founder__quote-role">Grunnlegger & Daglig Leder</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS ========== -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="testimonials__header">
+                <div class="testimonials__header-left animate-on-scroll">
+                    <span class="section-label section-label--dark">Kundeomtaler</span>
+                    <h2 class="testimonials__title" style="margin-top:24px;">Hva våre kunder sier</h2>
+                </div>
+                <div class="testimonials__nav">
+                    <button class="testimonials__nav-btn" id="testimonialsPrev" aria-label="Forrige">
+                        <svg viewBox="0 0 16 16" fill="none"><path d="M10 4l-4 4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <button class="testimonials__nav-btn" id="testimonialsNext" aria-label="Neste">
+                        <svg viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="testimonials__carousel">
+                <div class="testimonials__track" id="testimonialsTrack">
+                    <!-- Slide 1 -->
+                    <div class="testimonials__slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-card__stars">
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                            </div>
+                            <p class="testimonial-card__text">Fantastisk opplevelse! Vannscooterne var i toppstand og personalet var utrolig hjelpsomme. Vi kommer definitivt tilbake neste sommer.</p>
+                            <div class="testimonial-card__author">
+                                <div class="testimonial-card__avatar">
+                                    <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Erik Hansen">
+                                </div>
+                                <div>
+                                    <div class="testimonial-card__name">Erik Hansen</div>
+                                    <div class="testimonial-card__role">Stamkunde</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-card__stars">
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                            </div>
+                            <p class="testimonial-card__text">Beste bursdagsgaven noensinne! Min mann elsket hver eneste sekund på vannet. Profesjonelt opplegg fra start til slutt.</p>
+                            <div class="testimonial-card__author">
+                                <div class="testimonial-card__avatar">
+                                    <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Maria Olsen">
+                                </div>
+                                <div>
+                                    <div class="testimonial-card__name">Maria Olsen</div>
+                                    <div class="testimonial-card__role">Privatkunde</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-card__stars">
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                            </div>
+                            <p class="testimonial-card__text">Vi hadde firmaarrangement med Bulldogg Jetski og det var en enorm suksess. Alle kollegaene snakker fortsatt om det. Anbefales på det sterkeste!</p>
+                            <div class="testimonial-card__author">
+                                <div class="testimonial-card__avatar">
+                                    <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Thomas Berg">
+                                </div>
+                                <div>
+                                    <div class="testimonial-card__name">Thomas Berg</div>
+                                    <div class="testimonial-card__role">Bedriftskunde</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="testimonials__slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-card__stars">
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                            </div>
+                            <p class="testimonial-card__text">Første gang på vannscooter og det var helt utrolig! Instruksjonen var grundig og jeg følte meg trygg hele veien. Kan ikke vente med å gjøre det igjen.</p>
+                            <div class="testimonial-card__author">
+                                <div class="testimonial-card__avatar">
+                                    <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Sofie Andersen">
+                                </div>
+                                <div>
+                                    <div class="testimonial-card__name">Sofie Andersen</div>
+                                    <div class="testimonial-card__role">Nybegynner</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-card__stars">
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                            </div>
+                            <p class="testimonial-card__text">Bruker Bulldogg Jetski hver sommer. Kvaliteten på maskinene og servicen er konsekvent fantastisk. Det er rett og slett den beste utleietjenesten.</p>
+                            <div class="testimonial-card__author">
+                                <div class="testimonial-card__avatar">
+                                    <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Jonas Nilsen">
+                                </div>
+                                <div>
+                                    <div class="testimonial-card__name">Jonas Nilsen</div>
+                                    <div class="testimonial-card__role">Fast Kunde</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-card__stars">
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                            </div>
+                            <p class="testimonial-card__text">Perfekt for utdrikningslaget! Vi var 12 stykker og hadde en helt uforglemmelig dag. Tusen takk for en fantastisk opplevelse, Bulldogg Jetski!</p>
+                            <div class="testimonial-card__author">
+                                <div class="testimonial-card__avatar">
+                                    <img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Kristine Haugen">
+                                </div>
+                                <div>
+                                    <div class="testimonial-card__name">Kristine Haugen</div>
+                                    <div class="testimonial-card__role">Gruppearrangement</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="testimonials__slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-card__stars">
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                            </div>
+                            <p class="testimonial-card__text">Fantastisk service og velholdte vannscootere. Instruksjonen var tydelig og vi fikk mye hjelp med å planlegge ruten vår langs kysten.</p>
+                            <div class="testimonial-card__author">
+                                <div class="testimonial-card__avatar">
+                                    <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Anders Johansen">
+                                </div>
+                                <div>
+                                    <div class="testimonial-card__name">Anders Johansen</div>
+                                    <div class="testimonial-card__role">Turist</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-card__stars">
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                            </div>
+                            <p class="testimonial-card__text">Vi leide 4 vannscootere for en helg og hadde tiden i vårt liv. Prisene er rimelige og kvaliteten er i toppklasse. Sterkt anbefalt!</p>
+                            <div class="testimonial-card__author">
+                                <div class="testimonial-card__avatar">
+                                    <img src="https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Line Fredriksen">
+                                </div>
+                                <div>
+                                    <div class="testimonial-card__name">Line Fredriksen</div>
+                                    <div class="testimonial-card__role">Helgeleie</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-card__stars">
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                                <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
+                            </div>
+                            <p class="testimonial-card__text">Tok med familien for første gang og barna var helt ville av begeistring. Trygt og gøy for alle aldre. Vi har allerede booket neste tur!</p>
+                            <div class="testimonial-card__author">
+                                <div class="testimonial-card__avatar">
+                                    <img src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Markus Dahl">
+                                </div>
+                                <div>
+                                    <div class="testimonial-card__name">Markus Dahl</div>
+                                    <div class="testimonial-card__role">Familieopplevelse</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="cta" id="contact">
+        <div class="cta__video-bg">
+            <video autoplay muted loop playsinline>
+                <source src="https://videos.pexels.com/video-files/5765310/5765310-uhd_2560_1440_30fps.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="container">
+            <div class="cta__content animate-on-scroll">
+                <h2 class="cta__title">Klar for eventyr på vannet?</h2>
+                <p class="cta__desc">Book din vannscooter i dag og opplev spenningen med Bulldogg Jetski. Vi sørger for en uforglemmelig opplevelse.</p>
+                <a href="mailto:post@bulldoggjetski.no" class="btn-primary">
+                    Book Din Tur
+                    <span class="arrow-icon">
+                        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <div class="footer__logo">Bulldogg Jetski</div>
+                    <p class="footer__brand-desc">Premium vannscooter utleie med fokus på sikkerhet, kvalitet og uforglemmelige opplevelser på vannet.</p>
+                    <div class="footer__social">
+                        <a href="#" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
+                        </a>
+                        <a href="#" aria-label="TikTok">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.11v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.43v-7.1a8.16 8.16 0 005.58 2.19V11.3a4.85 4.85 0 01-3.58-1.59V6.69h3.58z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer__col">
+                    <h4 class="footer__col-title">Sider</h4>
+                    <ul class="footer__col-links">
+                        <li><a href="#hero">Hjem</a></li>
+                        <li><a href="#about">Om Oss</a></li>
+                        <li><a href="#overview">Vannscootere</a></li>
+                        <li><a href="#discover">Priser</a></li>
+                        <li><a href="#contact">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__col">
+                    <h4 class="footer__col-title">Tjenester</h4>
+                    <ul class="footer__col-links">
+                        <li><a href="#overview">Timeleie</a></li>
+                        <li><a href="#overview">Dagsleie</a></li>
+                        <li><a href="#overview">Helgepakker</a></li>
+                        <li><a href="#overview">Gruppearrangementer</a></li>
+                        <li><a href="#overview">Bedriftseventer</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__newsletter">
+                    <h4 class="footer__newsletter-title">Nyhetsbrev</h4>
+                    <p class="footer__newsletter-desc">Meld deg på for tilbud, nyheter og sesonginformasjon.</p>
+                    <form class="footer__newsletter-form" onsubmit="event.preventDefault(); alert('Takk for påmeldingen!');">
+                        <input type="email" class="footer__newsletter-input" placeholder="Din e-postadresse" required>
+                        <button type="submit" class="footer__newsletter-btn">Meld På</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2026 Bulldogg Jetski. Alle rettigheter reservert.</p>
+                <ul class="footer__bottom-links">
+                    <li><a href="#">Personvern</a></li>
+                    <li><a href="#">Vilkår</a></li>
+                    <li><a href="#">Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+        // ===== Nav scroll effect =====
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // ===== Mobile menu =====
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileClose = document.getElementById('mobileClose');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        mobileClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // ===== Smooth scroll =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // ===== Scroll animations =====
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ===== Overview Single-Boat Carousel =====
+        const boatData = [
+            {
+                name: 'Yamaha WaveRunner',
+                desc: 'Perfekt for familier og nybegynnere. Stabil, komfortabel vannscooter med plass til 3 passasjerer og enkel håndtering på åpent vann.',
+                image: 'https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69c538594880be32be7897a3.webp',
+                stat1: '180 HK', stat2: '105 km/t', stat3: 'Opptil 3'
+            },
+            {
+                name: 'Sea-Doo GTX',
+                desc: 'Kraftig og stilfull vannscooter med avansert teknologi for en komfortabel og spennende kjøreopplevelse på sjøen.',
+                image: 'https://images.pexels.com/photos/1007836/pexels-photo-1007836.jpeg?auto=compress&cs=tinysrgb&w=1600',
+                stat1: '230 HK', stat2: '110 km/t', stat3: 'Opptil 3'
+            },
+            {
+                name: 'Kawasaki Ultra 310',
+                desc: 'Den ultimate kraftpakken. Uovertruffen ytelse og presisjon for erfarne kjørere som søker ren adrenalin.',
+                image: 'https://images.pexels.com/photos/2116475/pexels-photo-2116475.jpeg?auto=compress&cs=tinysrgb&w=1600',
+                stat1: '310 HK', stat2: '120 km/t', stat3: 'Opptil 3'
+            },
+            {
+                name: 'Yamaha FX Cruiser',
+                desc: 'Luksus på vannet. Premium komfort, stabil kjøring og kraftig motor gjør dette til den perfekte cruiser-opplevelsen.',
+                image: 'https://images.pexels.com/photos/1430676/pexels-photo-1430676.jpeg?auto=compress&cs=tinysrgb&w=1600',
+                stat1: '250 HK', stat2: '112 km/t', stat3: 'Opptil 3'
+            },
+            {
+                name: 'Sea-Doo RXP-X',
+                desc: 'Bygget for fart og konkurranser. Rå kraft og responsiv styring gir den mest intense vannscooteropplevelsen.',
+                image: 'https://images.pexels.com/photos/1295036/pexels-photo-1295036.jpeg?auto=compress&cs=tinysrgb&w=1600',
+                stat1: '300 HK', stat2: '118 km/t', stat3: 'Opptil 2'
+            }
+        ];
+
+        const overviewPrev = document.getElementById('overviewPrev');
+        const overviewNext = document.getElementById('overviewNext');
+        const overviewName = document.getElementById('overviewName');
+        const overviewDesc = document.getElementById('overviewDesc');
+        const overviewImage = document.getElementById('overviewImage');
+        const overviewStat1 = document.getElementById('overviewStat1');
+        const overviewStat2 = document.getElementById('overviewStat2');
+        const overviewStat3 = document.getElementById('overviewStat3');
+        let overviewIndex = 0;
+        const overviewTotal = boatData.length;
+
+        function updateOverview() {
+            const boat = boatData[overviewIndex];
+            overviewName.style.opacity = '0';
+            overviewDesc.style.opacity = '0';
+            overviewImage.style.opacity = '0';
+
+            setTimeout(() => {
+                overviewName.textContent = boat.name;
+                overviewDesc.textContent = boat.desc;
+                overviewImage.src = boat.image;
+                overviewImage.alt = boat.name;
+                overviewStat1.textContent = boat.stat1;
+                overviewStat2.textContent = boat.stat2;
+                overviewStat3.textContent = boat.stat3;
+
+                overviewName.style.opacity = '1';
+                overviewDesc.style.opacity = '1';
+                overviewImage.style.opacity = '1';
+            }, 300);
+        }
+
+        overviewNext.addEventListener('click', () => {
+            overviewIndex = (overviewIndex + 1) % overviewTotal;
+            updateOverview();
+        });
+
+        overviewPrev.addEventListener('click', () => {
+            overviewIndex = (overviewIndex - 1 + overviewTotal) % overviewTotal;
+            updateOverview();
+        });
+
+        // ===== Testimonials Carousel =====
+        const testimonialsTrack = document.getElementById('testimonialsTrack');
+        const testimonialsPrev = document.getElementById('testimonialsPrev');
+        const testimonialsNext = document.getElementById('testimonialsNext');
+        let testimonialsIndex = 0;
+        const testimonialsSlides = testimonialsTrack.querySelectorAll('.testimonials__slide');
+        const testimonialsTotal = testimonialsSlides.length;
+
+        function updateTestimonials() {
+            testimonialsTrack.style.transform = `translateX(-${testimonialsIndex * 100}%)`;
+        }
+
+        testimonialsNext.addEventListener('click', () => {
+            testimonialsIndex = (testimonialsIndex + 1) % testimonialsTotal;
+            updateTestimonials();
+        });
+
+        testimonialsPrev.addEventListener('click', () => {
+            testimonialsIndex = (testimonialsIndex - 1 + testimonialsTotal) % testimonialsTotal;
+            updateTestimonials();
+        });
+
+        // ===== Auto-play carousels =====
+        setInterval(() => {
+            overviewIndex = (overviewIndex + 1) % overviewTotal;
+            updateOverview();
+        }, 8000);
+
+        setInterval(() => {
+            testimonialsIndex = (testimonialsIndex + 1) % testimonialsTotal;
+            updateTestimonials();
+        }, 7000);
+    </script>
+</body>
+</html>
