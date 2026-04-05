@@ -1,0 +1,22 @@
+{
+  "pakke": {
+    "id": "5IQn6z1Bc8riZwhZ10mp",
+    "fieldKey": "contact.pakke",
+    "dataType": "SINGLE_OPTIONS"
+  },
+  "antall_vannscootere": {
+    "id": "TogJVpM4vcAW7smkl9kD",
+    "fieldKey": "contact.antall_vannscootere",
+    "dataType": "SINGLE_OPTIONS"
+  },
+  "oensket_dato": {
+    "id": "uxafhfgqIHEDwWRADqQw",
+    "fieldKey": "contact.nsket_dato",
+    "dataType": "DATE"
+  },
+  "melding": {
+    "id": "llx0CN7050RvrKZPr4FQ",
+    "fieldKey": "contact.melding",
+    "dataType": "LARGE_TEXT"
+  }
+}

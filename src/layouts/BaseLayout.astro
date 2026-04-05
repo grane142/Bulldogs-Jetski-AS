@@ -298,7 +298,7 @@ const { title, description } = Astro.props;
             right: 0;
             bottom: 0;
             background: rgba(0,0,0,0.97);
-            z-index: 999;
+            z-index: 1001;
             flex-direction: column;
             align-items: center;
             justify-content: center;
@@ -756,6 +756,10 @@ const { title, description } = Astro.props;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
+        }
+
+        .discover__grid--pricing {
+            grid-template-columns: repeat(4, 1fr);
         }
 
         .discover__card {
@@ -1552,6 +1556,192 @@ const { title, description } = Astro.props;
             opacity: 1;
         }
 
+        /* ========== BOOKING MODAL ========== */
+        .booking-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .booking-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .booking-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.95);
+            width: 90%;
+            max-width: 640px;
+            max-height: 90vh;
+            overflow-y: auto;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 48px;
+            z-index: 2001;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .booking-modal.active {
+            display: block;
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .booking-modal__close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--border-dark);
+            border-radius: 50%;
+            background: var(--white);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .booking-modal__close:hover {
+            background: var(--light-bg);
+        }
+
+        .booking-modal__close svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .booking-modal__header {
+            margin-bottom: 32px;
+        }
+
+        .booking-modal__title {
+            font-family: var(--font-geist);
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: -1px;
+            margin-top: 12px;
+        }
+
+        .booking-modal__subtitle {
+            font-family: var(--font-inter);
+            font-size: 15px;
+            color: var(--gray-text);
+            margin-top: 8px;
+        }
+
+        .booking-form__row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .booking-form__field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        .booking-form__row .booking-form__field {
+            margin-bottom: 0;
+        }
+
+        .booking-form__field label {
+            font-family: var(--font-inter);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--black);
+            letter-spacing: 0.3px;
+        }
+
+        .booking-form__field input,
+        .booking-form__field select,
+        .booking-form__field textarea {
+            font-family: var(--font-inter);
+            font-size: 15px;
+            padding: 12px 16px;
+            border: 1px solid var(--border-dark);
+            border-radius: 10px;
+            background: var(--white);
+            color: var(--black);
+            outline: none;
+            transition: border-color 0.2s;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .booking-form__field input:focus,
+        .booking-form__field select:focus,
+        .booking-form__field textarea:focus {
+            border-color: var(--black);
+        }
+
+        .booking-form__field input::placeholder,
+        .booking-form__field textarea::placeholder {
+            color: #aaa;
+        }
+
+        .booking-form__field select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%23666' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 36px;
+        }
+
+        .booking-form__field textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .booking-form__submit {
+            width: 100%;
+            justify-content: center;
+            margin-top: 8px;
+        }
+
+        .booking-modal__success {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .booking-modal__success-icon {
+            margin-bottom: 24px;
+        }
+
+        .booking-modal__success-icon svg {
+            width: 64px;
+            height: 64px;
+        }
+
+        .booking-modal__success h3 {
+            font-family: var(--font-geist);
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .booking-modal__success p {
+            font-family: var(--font-inter);
+            font-size: 15px;
+            color: var(--gray-text);
+            line-height: 1.6;
+        }
+
         /* ========== RESPONSIVE - TABLET ========== */
         @media (max-width: 1024px) {
             .nav__links {
@@ -1560,6 +1750,10 @@ const { title, description } = Astro.props;
 
             .nav__mobile-toggle {
                 display: flex;
+            }
+
+            .nav__cta {
+                display: none;
             }
 
             .about__top {
@@ -1587,6 +1781,10 @@ const { title, description } = Astro.props;
             .discover__grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
+            }
+
+            .discover__grid--pricing {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .founder__inner {
@@ -1630,6 +1828,25 @@ const { title, description } = Astro.props;
 
         /* ========== RESPONSIVE - PHONE ========== */
         @media (max-width: 640px) {
+            .booking-modal {
+                padding: 32px 24px;
+                width: 95%;
+                max-height: 85vh;
+            }
+
+            .booking-form__row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .booking-form__row .booking-form__field {
+                margin-bottom: 16px;
+            }
+
+            .booking-modal__title {
+                font-size: 22px;
+            }
+
             .nav__inner {
                 height: 52px;
                 padding: 0 6px 0 18px;
@@ -1677,6 +1894,10 @@ const { title, description } = Astro.props;
 
             .discover {
                 padding: 80px 0;
+            }
+
+            .discover__grid--pricing {
+                grid-template-columns: 1fr;
             }
 
             .feature__content {
