@@ -1886,27 +1886,8 @@ const { title, description } = Astro.props;
                 gap: 24px;
             }
 
-            .testimonials__carousel {
-                overflow: visible;
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                -webkit-overflow-scrolling: touch;
-            }
-
-            .testimonials__track {
-                display: flex;
-                transition: none;
-                transform: none !important;
-            }
-
             .testimonials__slide {
-                display: contents;
-            }
-
-            .testimonial-card {
-                min-width: calc(100vw - 48px);
-                flex-shrink: 0;
-                scroll-snap-align: center;
+                grid-template-columns: 1fr;
             }
 
             .footer__top {

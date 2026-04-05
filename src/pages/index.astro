@@ -922,21 +922,43 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         const testimonialsNext = document.getElementById('testimonialsNext');
         let testimonialsIndex = 0;
         const testimonialsSlides = testimonialsTrack.querySelectorAll('.testimonials__slide');
-        const testimonialsTotal = testimonialsSlides.length;
+        const allCards = testimonialsTrack.querySelectorAll('.testimonial-card');
+        const isMobile = () => window.innerWidth <= 768;
+
+        function getTestimonialsTotal() {
+            return isMobile() ? allCards.length : testimonialsSlides.length;
+        }
 
         function updateTestimonials() {
-            testimonialsTrack.style.transform = `translateX(-${testimonialsIndex * 100}%)`;
+            if (isMobile()) {
+                // On mobile: show one card at a time
+                allCards.forEach((card, i) => {
+                    card.style.display = i === testimonialsIndex ? 'block' : 'none';
+                });
+                testimonialsTrack.style.transform = 'none';
+            } else {
+                // On desktop: show slides (3 cards each)
+                allCards.forEach(card => card.style.display = '');
+                testimonialsTrack.style.transform = `translateX(-${testimonialsIndex * 100}%)`;
+            }
         }
 
         testimonialsNext.addEventListener('click', () => {
-            testimonialsIndex = (testimonialsIndex + 1) % testimonialsTotal;
+            testimonialsIndex = (testimonialsIndex + 1) % getTestimonialsTotal();
             updateTestimonials();
         });
 
         testimonialsPrev.addEventListener('click', () => {
-            testimonialsIndex = (testimonialsIndex - 1 + testimonialsTotal) % testimonialsTotal;
+            testimonialsIndex = (testimonialsIndex - 1 + getTestimonialsTotal()) % getTestimonialsTotal();
             updateTestimonials();
         });
+
+        window.addEventListener('resize', () => {
+            testimonialsIndex = 0;
+            updateTestimonials();
+        });
+
+        updateTestimonials();
 
         // ===== Swipe support for carousels =====
         function addSwipe(element, onLeft, onRight) {
@@ -967,8 +989,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         // Testimonials carousel swipe
         addSwipe(testimonialsTrack,
-            () => { testimonialsIndex = (testimonialsIndex + 1) % testimonialsTotal; updateTestimonials(); },
-            () => { testimonialsIndex = (testimonialsIndex - 1 + testimonialsTotal) % testimonialsTotal; updateTestimonials(); }
+            () => { testimonialsIndex = (testimonialsIndex + 1) % getTestimonialsTotal(); updateTestimonials(); },
+            () => { testimonialsIndex = (testimonialsIndex - 1 + getTestimonialsTotal()) % getTestimonialsTotal(); updateTestimonials(); }
         );
 
         // ===== Booking Modal =====
