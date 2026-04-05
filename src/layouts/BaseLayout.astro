@@ -1754,6 +1754,36 @@ const { title, description } = Astro.props;
             min-height: 80px;
         }
 
+        .booking-form__consent {
+            margin-top: 8px;
+        }
+
+        .booking-form__checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-family: var(--font-inter);
+            font-size: 13px;
+            font-weight: 300;
+            color: var(--gray-mid);
+            line-height: 1.5;
+            cursor: pointer;
+        }
+
+        .booking-form__checkbox-label input[type="checkbox"] {
+            margin-top: 3px;
+            flex-shrink: 0;
+            width: 16px;
+            height: 16px;
+            accent-color: var(--blue);
+            cursor: pointer;
+        }
+
+        .booking-form__checkbox-label a {
+            color: var(--blue);
+            text-decoration: underline;
+        }
+
         .booking-form__submit {
             width: 100%;
             justify-content: center;

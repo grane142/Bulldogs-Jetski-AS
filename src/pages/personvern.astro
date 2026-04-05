@@ -1,0 +1,309 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Personvern - Bulldogs Jetski AS" description="Personvernerklaering for Bulldogs Jetski AS. Les om hvordan vi behandler dine personopplysninger.">
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="nav scrolled" id="nav">
+        <div class="nav__inner" style="border-color: var(--border-dark);">
+            <a href="/" class="nav__logo" style="color: var(--black);">Bulldogs Jetski</a>
+            <ul class="nav__links">
+                <li><a href="/" style="color: var(--black);">Hjem</a></li>
+            </ul>
+            <div class="nav__cta">
+                <a href="/#contact" class="btn-primary">
+                    Book Nå
+                    <span class="arrow-icon">
+                        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+            <div class="nav__mobile-toggle" id="mobileToggle" aria-label="Open menu">
+                <span style="background: var(--black);"></span>
+                <span style="background: var(--black);"></span>
+                <span style="background: var(--black);"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="nav__mobile-menu" id="mobileMenu">
+        <div class="nav__mobile-close" id="mobileClose" aria-label="Close menu"></div>
+        <a href="/" class="mobile-link">Hjem</a>
+        <a href="/#contact" class="btn-primary" style="margin-top: 20px;">
+            Book Nå
+            <span class="arrow-icon">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+        </a>
+    </div>
+
+    <!-- ========== PERSONVERN ========== -->
+    <section class="privacy" style="padding-top: 160px; padding-bottom: 100px;">
+        <div class="container" style="max-width: 800px;">
+            <p class="hero__label" style="color: var(--blue); margin-bottom: 12px;">Bulldogs Jetski AS</p>
+            <h1 style="font-family: var(--font-geist); font-size: clamp(32px, 5vw, 48px); font-weight: 500; letter-spacing: -1px; margin-bottom: 12px;">Personvernerklæring</h1>
+            <p style="font-family: var(--font-inter); font-size: 15px; color: var(--gray-mid); margin-bottom: 48px;">Sist oppdatert: 5. april 2026</p>
+
+            <!-- Accordion items -->
+            <div class="privacy-accordion">
+
+                <div class="privacy-accordion__item">
+                    <button class="privacy-accordion__trigger" aria-expanded="false">
+                        <span>Hvem er vi?</span>
+                        <svg class="privacy-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="privacy-accordion__content">
+                        <p><strong>Bulldogs Jetski AS</strong> er behandlingsansvarlig for personopplysningene vi samler inn via denne nettsiden.</p>
+                        <ul>
+                            <li><strong>Organisasjonsnummer:</strong> 836 511 972</li>
+                            <li><strong>Telefon:</strong> 45 03 42 83</li>
+                            <li><strong>E-post:</strong> kontakt@bulldogsjetski.no</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="privacy-accordion__item">
+                    <button class="privacy-accordion__trigger" aria-expanded="false">
+                        <span>Hvilke opplysninger samler vi inn?</span>
+                        <svg class="privacy-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="privacy-accordion__content">
+                        <p>Når du sender en forespørsel via bookingskjemaet vårt, samler vi inn følgende opplysninger:</p>
+                        <ul>
+                            <li>Fullt navn</li>
+                            <li>Telefonnummer</li>
+                            <li>E-postadresse</li>
+                            <li>Ønsket dato for leie</li>
+                            <li>Valgt pakke og antall vannscootere</li>
+                            <li>Eventuell melding du skriver</li>
+                        </ul>
+                        <p>Vi samler ikke inn sensitive personopplysninger.</p>
+                    </div>
+                </div>
+
+                <div class="privacy-accordion__item">
+                    <button class="privacy-accordion__trigger" aria-expanded="false">
+                        <span>Hvorfor samler vi inn opplysningene?</span>
+                        <svg class="privacy-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="privacy-accordion__content">
+                        <p>Vi bruker dine personopplysninger for å:</p>
+                        <ul>
+                            <li>Behandle og besvare din bookingforespørsel</li>
+                            <li>Kontakte deg med bekreftelse og praktisk informasjon</li>
+                            <li>Gi deg best mulig kundeservice</li>
+                            <li>Oppfylle eventuelle juridiske forpliktelser</li>
+                        </ul>
+                        <p>Behandlingsgrunnlaget er ditt samtykke (GDPR art. 6 nr. 1 bokstav a) og at behandlingen er nødvendig for å oppfylle en avtale (GDPR art. 6 nr. 1 bokstav b).</p>
+                    </div>
+                </div>
+
+                <div class="privacy-accordion__item">
+                    <button class="privacy-accordion__trigger" aria-expanded="false">
+                        <span>Hvem deler vi opplysningene med?</span>
+                        <svg class="privacy-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="privacy-accordion__content">
+                        <p>Vi selger aldri dine personopplysninger til tredjeparter. Opplysningene kan deles med:</p>
+                        <ul>
+                            <li><strong>Tjenesteleverandører:</strong> Vi bruker tredjepartstjenester for e-post og skjemahåndtering som behandler data på våre vegne.</li>
+                            <li><strong>Offentlige myndigheter:</strong> Dersom vi er pålagt ved lov.</li>
+                        </ul>
+                        <p>Alle tredjeparter vi bruker er forpliktet til å behandle dine opplysninger i samsvar med GDPR.</p>
+                    </div>
+                </div>
+
+                <div class="privacy-accordion__item">
+                    <button class="privacy-accordion__trigger" aria-expanded="false">
+                        <span>Hvor lenge lagrer vi opplysningene?</span>
+                        <svg class="privacy-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="privacy-accordion__content">
+                        <p>Vi lagrer dine personopplysninger kun så lenge det er nødvendig for formålet de ble samlet inn for. Bookingforespørsler slettes innen 12 måneder etter at leieforholdet er avsluttet, med mindre vi er juridisk forpliktet til å oppbevare dem lenger (f.eks. regnskapsloven).</p>
+                    </div>
+                </div>
+
+                <div class="privacy-accordion__item">
+                    <button class="privacy-accordion__trigger" aria-expanded="false">
+                        <span>Informasjonskapsler (cookies)</span>
+                        <svg class="privacy-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="privacy-accordion__content">
+                        <p>Denne nettsiden kan bruke informasjonskapsler for å:</p>
+                        <ul>
+                            <li>Sikre at nettsiden fungerer korrekt (nødvendige cookies)</li>
+                            <li>Analysere bruk av nettsiden for å forbedre opplevelsen (analytiske cookies)</li>
+                        </ul>
+                        <p>Du kan når som helst endre eller trekke tilbake ditt samtykke til cookies via nettleserinnstillingene dine.</p>
+                    </div>
+                </div>
+
+                <div class="privacy-accordion__item">
+                    <button class="privacy-accordion__trigger" aria-expanded="false">
+                        <span>Dine rettigheter</span>
+                        <svg class="privacy-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="privacy-accordion__content">
+                        <p>Du har følgende rettigheter i henhold til GDPR:</p>
+                        <ul>
+                            <li><strong>Innsyn:</strong> Du kan be om innsyn i hvilke opplysninger vi har om deg.</li>
+                            <li><strong>Retting:</strong> Du kan be om at uriktige opplysninger rettes.</li>
+                            <li><strong>Sletting:</strong> Du kan be om at opplysningene dine slettes.</li>
+                            <li><strong>Begrensning:</strong> Du kan be om begrensning av behandling.</li>
+                            <li><strong>Dataportabilitet:</strong> Du kan be om å få utlevert dine data.</li>
+                            <li><strong>Innsigelse:</strong> Du kan protestere mot behandlingen.</li>
+                        </ul>
+                        <p>For å utøve dine rettigheter, kontakt oss på telefon <strong>45 03 42 83</strong> eller via e-post.</p>
+                    </div>
+                </div>
+
+                <div class="privacy-accordion__item">
+                    <button class="privacy-accordion__trigger" aria-expanded="false">
+                        <span>Klagerett</span>
+                        <svg class="privacy-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="privacy-accordion__content">
+                        <p>Dersom du mener at vår behandling av personopplysninger ikke er i samsvar med regelverket, har du rett til å klage til <strong>Datatilsynet</strong>.</p>
+                        <ul>
+                            <li><strong>Datatilsynet:</strong> www.datatilsynet.no</li>
+                            <li><strong>Telefon:</strong> 22 39 69 00</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="privacy-accordion__item">
+                    <button class="privacy-accordion__trigger" aria-expanded="false">
+                        <span>Endringer i personvernerklæringen</span>
+                        <svg class="privacy-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="privacy-accordion__content">
+                        <p>Vi forbeholder oss retten til å oppdatere denne personvernerklæringen. Ved vesentlige endringer vil vi informere deg via nettsiden. Vi anbefaler at du jevnlig leser gjennom denne siden for å holde deg oppdatert.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 48px; padding: 32px; background: var(--off-white); border-radius: 16px;">
+                <p style="font-family: var(--font-geist); font-size: 18px; font-weight: 500; margin-bottom: 8px;">Har du spørsmål?</p>
+                <p style="font-family: var(--font-inter); font-size: 14px; color: var(--gray-mid); line-height: 1.6;">Kontakt oss på telefon <strong>45 03 42 83</strong> eller send en forespørsel via <a href="/#contact" style="color: var(--blue);">kontaktskjemaet</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__bottom" style="border-top: none;">
+                <p class="footer__copyright">&copy; 2026 Bulldogs Jetski AS. Org.nr: 836 511 972. Alle rettigheter reservert.</p>
+                <ul class="footer__bottom-links">
+                    <li><a href="/personvern">Personvern</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===== Mobile menu =====
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileClose = document.getElementById('mobileClose');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        mobileClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.remove('active'));
+        });
+
+        // ===== Accordion =====
+        document.querySelectorAll('.privacy-accordion__trigger').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', !expanded);
+                const content = btn.nextElementSibling;
+                if (expanded) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
+            });
+        });
+    </script>
+
+    <style>
+        .privacy-accordion__item {
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .privacy-accordion__trigger {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-geist);
+            font-size: 17px;
+            font-weight: 500;
+            color: var(--black);
+            text-align: left;
+            gap: 16px;
+        }
+
+        .privacy-accordion__trigger:hover {
+            color: var(--blue);
+        }
+
+        .privacy-accordion__icon {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            transition: transform 0.3s;
+        }
+
+        .privacy-accordion__trigger[aria-expanded="true"] .privacy-accordion__icon {
+            transform: rotate(180deg);
+        }
+
+        .privacy-accordion__content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .privacy-accordion__content p,
+        .privacy-accordion__content ul {
+            font-family: var(--font-inter);
+            font-size: 14px;
+            font-weight: 300;
+            color: var(--gray-mid);
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .privacy-accordion__content ul {
+            padding-left: 20px;
+        }
+
+        .privacy-accordion__content ul li {
+            margin-bottom: 4px;
+        }
+
+        .privacy-accordion__content > :last-child {
+            margin-bottom: 20px;
+        }
+    </style>
+
+</BaseLayout>

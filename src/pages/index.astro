@@ -688,6 +688,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <label for="bookingMessage">Melding (valgfritt)</label>
                 <textarea id="bookingMessage" name="message" rows="3" placeholder="Spesielle ønsker, spørsmål eller annet..."></textarea>
             </div>
+            <div class="booking-form__consent">
+                <label class="booking-form__checkbox-label">
+                    <input type="checkbox" id="bookingConsent" name="consent" required>
+                    <span>Jeg godtar <a href="/personvern" target="_blank">personvernerklæringen</a> og samtykker til at mine opplysninger behandles for å besvare min forespørsel.</span>
+                </label>
+            </div>
             <button type="submit" class="btn-primary booking-form__submit">
                 Send Forespørsel
                 <span class="arrow-icon">
@@ -751,7 +757,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <div class="footer__bottom">
                 <p class="footer__copyright">&copy; 2026 Bulldogs Jetski. Alle rettigheter reservert.</p>
                 <ul class="footer__bottom-links">
-                    <li><a href="#">Personvern</a></li>
+                    <li><a href="/personvern">Personvern</a></li>
                     <li><a href="#">Vilkår</a></li>
                     <li><a href="#">Cookies</a></li>
                 </ul>
