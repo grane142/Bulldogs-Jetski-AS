@@ -52,12 +52,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <!-- ========== HERO ========== -->
     <section class="hero" id="hero">
-        <!-- Mobile: static image, Desktop: video -->
-        <div class="hero__image-bg">
-            <img src="https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69d216d54cde4bbc2aca05e5.jpg" alt="Jetski på vannet" fetchpriority="high">
-        </div>
         <div class="hero__video-bg">
-            <video id="heroVideo" autoplay muted loop playsinline disableRemotePlayback preload="metadata" poster="https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69d216d54cde4bbc2aca05e5.jpg">
+            <video id="heroVideo" autoplay muted loop playsinline disableRemotePlayback preload="auto" poster="https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69d216d54cde4bbc2aca05e5.jpg">
                 <source src="https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69d2253a84c045c2745c4d69.mp4" type="video/mp4">
             </video>
         </div>
@@ -763,18 +759,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <!-- ========== JAVASCRIPT ========== -->
     <script>
-        // ===== Hero video: only load on desktop =====
+        // ===== Force video autoplay on mobile =====
         const heroVideo = document.getElementById('heroVideo');
-        if (heroVideo && window.innerWidth > 768) {
-            heroVideo.src = heroVideo.querySelector('source').src;
-            heroVideo.load();
-            heroVideo.addEventListener('canplay', () => {
-                heroVideo.play().catch(() => {});
-            }, { once: true });
-        } else if (heroVideo) {
-            // On mobile, remove video source to save bandwidth
-            heroVideo.removeAttribute('src');
-            heroVideo.load();
+        if (heroVideo) {
+            const tryPlay = () => {
+                heroVideo.muted = true;
+                const p = heroVideo.play();
+                if (p) p.catch(() => {});
+            };
+            tryPlay();
+            document.addEventListener('touchstart', tryPlay, { once: true });
+            document.addEventListener('click', tryPlay, { once: true });
+            heroVideo.addEventListener('loadeddata', tryPlay);
         }
 
         // ===== Nav scroll effect =====
