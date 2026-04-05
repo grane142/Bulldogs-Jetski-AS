@@ -56,7 +56,7 @@ function buildEmailHtml(data: BookingPayload): string {
   return `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
       <h2 style="color: #111; border-bottom: 2px solid #111; padding-bottom: 12px;">
-        Ny forespørsel — Bulldogg Jetski
+        Ny forespørsel — Bulldogs Jetski
       </h2>
       <table style="width: 100%; border-collapse: collapse; margin-top: 16px;">
         <tr>
@@ -93,7 +93,7 @@ function buildEmailHtml(data: BookingPayload): string {
         }
       </table>
       <p style="margin-top: 24px; color: #666; font-size: 13px;">
-        Sendt fra nettskjemaet på bulldoggjetski.no
+        Sendt fra nettskjemaet på bulldogsjetski.no
       </p>
     </div>
   `;

@@ -1,12 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Bulldogg Jetski - Premium Vannscooter Utleie" description="Opplev spenningen med vannscooter. Bulldogg Jetski tilbyr premium vannscooter utleie med førsteklasses service.">
+<BaseLayout title="Bulldogs Jetski - Premium Vannscooter Utleie" description="Opplev spenningen med vannscooter. Bulldogs Jetski tilbyr premium vannscooter utleie med førsteklasses service.">
 
     <!-- ========== NAVIGATION ========== -->
     <nav class="nav" id="nav">
         <div class="nav__inner">
-            <a href="#" class="nav__logo">Bulldogg Jetski</a>
+            <a href="#" class="nav__logo">Bulldogs Jetski</a>
             <ul class="nav__links">
                 <li><a href="#about">Om Oss</a></li>
                 <li><a href="#overview">Vannscootere</a></li>
@@ -53,14 +53,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <!-- ========== HERO ========== -->
     <section class="hero" id="hero">
         <div class="hero__video-bg">
-            <video autoplay muted loop playsinline webkit-playsinline>
+            <video id="heroVideo" autoplay muted loop playsinline disableRemotePlayback preload="auto" poster="https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69d216d54cde4bbc2aca05e5.jpg">
                 <source src="https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69d212e684c045c2745a4dc5.mp4" type="video/mp4">
             </video>
         </div>
         <div class="hero__content">
             <p class="hero__label">Premium Vannscooter Utleie</p>
             <h1 class="hero__title">Opplev spenningen på vannet.</h1>
-            <p class="hero__subtitle">Lei en vannscooter og opplev friheten og adrenalinet på sjøen med Bulldogg Jetski.</p>
+            <p class="hero__subtitle">Lei en vannscooter og opplev friheten og adrenalinet på sjøen med Bulldogs Jetski.</p>
             <div class="hero__cta">
                 <a href="#overview" class="btn-outline">
                     Utforsk Vannscootere
@@ -87,13 +87,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     <div class="about__right-image">
                         <img src="https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69d216d53d829c73b2383adc.jpg" alt="Vannscooter på sjøen">
                         <div class="about__right-overlay">
-                            <p>Vårt lidenskapelige team er dedikert til sikkerhet, komfort og service. Uansett hvor vannet kaller, er Bulldogg Jetski her for å hjelpe.</p>
+                            <p>Vårt lidenskapelige team er dedikert til sikkerhet, komfort og service. Uansett hvor vannet kaller, er Bulldogs Jetski her for å hjelpe.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <p class="about__bottom-desc animate-on-scroll animate-delay-2">Bulldogg Jetski er mer enn bare en utleietjeneste — det er din inngangsport til uforglemmelige opplevelser på vannet. Vi startet med en enkel visjon: å gjøre vannscooterkjøring tilgjengelig, stilfullt og stressfritt. I dag hjelper vi eventyrere, familier og utforskere med å skape minner som varer livet ut.</p>
+            <p class="about__bottom-desc animate-on-scroll animate-delay-2">Bulldogs Jetski er mer enn bare en utleietjeneste — det er din inngangsport til uforglemmelige opplevelser på vannet. Vi startet med en enkel visjon: å gjøre vannscooterkjøring tilgjengelig, stilfullt og stressfritt. I dag hjelper vi eventyrere, familier og utforskere med å skape minner som varer livet ut.</p>
 
             <div class="about__stats animate-on-scroll animate-delay-3">
                 <div class="about__stat">
@@ -134,7 +134,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <svg viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </button>
                 </div>
-                <img id="overviewImage" src="https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69c538594880be32be7897a3.webp" alt="Yamaha WaveRunner">
+                <img id="overviewImage" src="https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69c538594880be32be7897a3.webp" alt="Yamaha WaveRunner" loading="lazy">
             </div>
 
             <div class="overview__stats animate-on-scroll animate-delay-2">
@@ -317,7 +317,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <!-- ========== FEATURE/INTERIOR ========== -->
     <section class="feature">
         <div class="feature__bg">
-            <img src="https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69d216d54cde4bbc2aca05e3.jpg" alt="Vannscooter på sjøen">
+            <img src="https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69d216d54cde4bbc2aca05e3.jpg" alt="Vannscooter på sjøen" loading="lazy">
         </div>
         <div class="container">
             <div class="feature__content animate-on-scroll">
@@ -343,7 +343,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <div class="founder__left animate-on-scroll">
                     <span class="section-label section-label--dark">Vår Grunnlegger</span>
                     <h2 class="founder__title" style="margin-top:24px;">Lidenskap for vannsport og eventyr</h2>
-                    <p class="founder__desc">Med over 8 års erfaring innen vannsport og utleie har vi bygget Bulldogg Jetski med fokus på sikkerhet, kvalitet og uforglemmelige opplevelser for alle våre kunder.</p>
+                    <p class="founder__desc">Med over 8 års erfaring innen vannsport og utleie har vi bygget Bulldogs Jetski med fokus på sikkerhet, kvalitet og uforglemmelige opplevelser for alle våre kunder.</p>
 
                     <div class="founder__benefits">
                         <div class="founder__benefit">
@@ -383,7 +383,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 </div>
                 <div class="founder__right animate-on-scroll animate-delay-2">
                     <div class="founder__image">
-                        <img src="https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69d21f5d4cde4bbc2acaf5e1.jpg" alt="Grunnlegger">
+                        <img src="https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69d21f5d4cde4bbc2acaf5e1.jpg" alt="Grunnlegger" loading="lazy">
                     </div>
                     <div class="founder__quote">
                         <p class="founder__quote-text">"Vår visjon er å gi alle muligheten til å oppleve friheten og spenningen på vannet, uansett erfaring."</p>
@@ -392,7 +392,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                 <img src="https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69d21f5d4cde4bbc2acaf5e1.jpg" alt="Avatar">
                             </div>
                             <div>
-                                <div class="founder__quote-name">Bulldogg Jetski</div>
+                                <div class="founder__quote-name">Bulldogs Jetski</div>
                                 <div class="founder__quote-role">Grunnlegger & Daglig Leder</div>
                             </div>
                         </div>
@@ -470,7 +470,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                 <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
                                 <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
                             </div>
-                            <p class="testimonial-card__text">Vi hadde firmaarrangement med Bulldogg Jetski og det var en enorm suksess. Alle kollegaene snakker fortsatt om det. Anbefales på det sterkeste!</p>
+                            <p class="testimonial-card__text">Vi hadde firmaarrangement med Bulldogs Jetski og det var en enorm suksess. Alle kollegaene snakker fortsatt om det. Anbefales på det sterkeste!</p>
                             <div class="testimonial-card__author">
                                 <div class="testimonial-card__avatar">
                                     <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Thomas Berg">
@@ -511,7 +511,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                 <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
                                 <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
                             </div>
-                            <p class="testimonial-card__text">Bruker Bulldogg Jetski hver sommer. Kvaliteten på maskinene og servicen er konsekvent fantastisk. Det er rett og slett den beste utleietjenesten.</p>
+                            <p class="testimonial-card__text">Bruker Bulldogs Jetski hver sommer. Kvaliteten på maskinene og servicen er konsekvent fantastisk. Det er rett og slett den beste utleietjenesten.</p>
                             <div class="testimonial-card__author">
                                 <div class="testimonial-card__avatar">
                                     <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Jonas Nilsen">
@@ -530,7 +530,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                 <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
                                 <svg viewBox="0 0 16 16"><path d="M8 1l2.24 4.54 5.01.73-3.63 3.53.86 4.99L8 12.27l-4.48 2.52.86-4.99L.75 6.27l5.01-.73L8 1z"/></svg>
                             </div>
-                            <p class="testimonial-card__text">Perfekt for utdrikningslaget! Vi var 12 stykker og hadde en helt uforglemmelig dag. Tusen takk for en fantastisk opplevelse, Bulldogg Jetski!</p>
+                            <p class="testimonial-card__text">Perfekt for utdrikningslaget! Vi var 12 stykker og hadde en helt uforglemmelig dag. Tusen takk for en fantastisk opplevelse, Bulldogs Jetski!</p>
                             <div class="testimonial-card__author">
                                 <div class="testimonial-card__avatar">
                                     <img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Kristine Haugen">
@@ -612,7 +612,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="container">
             <div class="cta__content animate-on-scroll">
                 <h2 class="cta__title">Klar for eventyr på vannet?</h2>
-                <p class="cta__desc">Book din vannscooter i dag og opplev spenningen med Bulldogg Jetski. Vi sørger for en uforglemmelig opplevelse.</p>
+                <p class="cta__desc">Book din vannscooter i dag og opplev spenningen med Bulldogs Jetski. Vi sørger for en uforglemmelig opplevelse.</p>
                 <a href="#contact" class="btn-primary">
                     Book Din Tur
                     <span class="arrow-icon">
@@ -707,7 +707,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="container">
             <div class="footer__top">
                 <div class="footer__brand">
-                    <div class="footer__logo">Bulldogg Jetski</div>
+                    <div class="footer__logo">Bulldogs Jetski</div>
                     <p class="footer__brand-desc">Premium vannscooter utleie med fokus på sikkerhet, kvalitet og uforglemmelige opplevelser på vannet.</p>
                     <div class="footer__social">
                         <a href="#" aria-label="Facebook">
@@ -747,7 +747,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
 
             <div class="footer__bottom">
-                <p class="footer__copyright">&copy; 2026 Bulldogg Jetski. Alle rettigheter reservert.</p>
+                <p class="footer__copyright">&copy; 2026 Bulldogs Jetski. Alle rettigheter reservert.</p>
                 <ul class="footer__bottom-links">
                     <li><a href="#">Personvern</a></li>
                     <li><a href="#">Vilkår</a></li>
@@ -759,6 +759,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <!-- ========== JAVASCRIPT ========== -->
     <script>
+        // ===== Force video autoplay on mobile =====
+        const heroVideo = document.getElementById('heroVideo');
+        if (heroVideo) {
+            const tryPlay = () => {
+                heroVideo.muted = true;
+                const p = heroVideo.play();
+                if (p) p.catch(() => {});
+            };
+            // Try immediately
+            tryPlay();
+            // Retry on user interaction (some browsers need it)
+            document.addEventListener('touchstart', tryPlay, { once: true });
+            document.addEventListener('click', tryPlay, { once: true });
+            // Retry when video data is loaded
+            heroVideo.addEventListener('loadeddata', tryPlay);
+        }
+
         // ===== Nav scroll effect =====
         const nav = document.getElementById('nav');
         window.addEventListener('scroll', () => {
