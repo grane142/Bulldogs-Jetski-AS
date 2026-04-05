@@ -252,6 +252,27 @@ const { title, description } = Astro.props;
             white-space: nowrap;
         }
 
+        .nav__logo-img {
+            height: 36px;
+            width: auto;
+            display: block;
+        }
+
+        .nav__v1-link {
+            background: var(--blue);
+            color: var(--white) !important;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .nav.scrolled .nav__v1-link {
+            background: var(--blue);
+            color: var(--white) !important;
+        }
+
         .nav__links {
             display: flex;
             align-items: center;
@@ -1400,6 +1421,12 @@ const { title, description } = Astro.props;
             color: var(--black);
             margin-bottom: 16px;
             letter-spacing: -0.5px;
+        }
+
+        .footer__logo-img {
+            height: 40px;
+            width: auto;
+            display: block;
         }
 
         .footer__brand-desc {
