@@ -1887,7 +1887,6 @@ const { title, description } = Astro.props;
             }
 
             .testimonials__slide {
-                grid-template-columns: 1fr;
                 display: flex;
                 overflow-x: auto;
                 scroll-snap-type: x mandatory;
@@ -1897,9 +1896,9 @@ const { title, description } = Astro.props;
             }
 
             .testimonials__slide .testimonial-card {
-                min-width: 85%;
+                min-width: calc(100% - 32px);
                 flex-shrink: 0;
-                scroll-snap-align: start;
+                scroll-snap-align: center;
             }
 
             .footer__top {
