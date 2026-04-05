@@ -253,7 +253,7 @@ const { title, description } = Astro.props;
         }
 
         .nav__logo-img {
-            height: 36px;
+            height: 70px;
             width: auto;
             display: block;
         }
@@ -791,6 +791,8 @@ const { title, description } = Astro.props;
             border: 1px solid var(--border-dark);
             border-radius: 16px;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
             background: var(--white);
             transition: border-color 0.3s;
         }
@@ -818,6 +820,9 @@ const { title, description } = Astro.props;
 
         .discover__card-body {
             padding: 28px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .discover__card-label {
@@ -914,6 +919,7 @@ const { title, description } = Astro.props;
             flex-direction: column;
             gap: 12px;
             margin-bottom: 24px;
+            flex: 1;
         }
 
         .discover__card-feature {
@@ -1424,7 +1430,7 @@ const { title, description } = Astro.props;
         }
 
         .footer__logo-img {
-            height: 40px;
+            height: 80px;
             width: auto;
             display: block;
         }
