@@ -1315,6 +1315,14 @@ const { title, description } = Astro.props;
             overflow: hidden;
         }
 
+        .cta::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 0;
+        }
+
         .cta__video-bg {
             position: absolute;
             inset: 0;
