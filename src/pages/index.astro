@@ -931,14 +931,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         function updateTestimonials() {
             if (isMobile()) {
-                // On mobile: show one card at a time
+                // On mobile: show one card at a time, handle slide visibility
+                testimonialsSlides.forEach(slide => {
+                    slide.style.display = 'none';
+                    slide.style.minWidth = '100%';
+                });
                 allCards.forEach((card, i) => {
-                    card.style.display = i === testimonialsIndex ? 'block' : 'none';
+                    card.style.display = 'none';
+                    if (i === testimonialsIndex) {
+                        card.style.display = 'block';
+                        card.closest('.testimonials__slide').style.display = 'block';
+                    }
                 });
                 testimonialsTrack.style.transform = 'none';
+                testimonialsTrack.style.display = 'block';
             } else {
                 // On desktop: show slides (3 cards each)
+                testimonialsSlides.forEach(slide => {
+                    slide.style.display = '';
+                    slide.style.minWidth = '';
+                });
                 allCards.forEach(card => card.style.display = '');
+                testimonialsTrack.style.display = '';
                 testimonialsTrack.style.transform = `translateX(-${testimonialsIndex * 100}%)`;
             }
         }
