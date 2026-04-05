@@ -53,7 +53,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <!-- ========== HERO ========== -->
     <section class="hero" id="hero">
         <div class="hero__video-bg">
-            <video autoplay muted loop playsinline>
+            <video autoplay muted loop playsinline webkit-playsinline>
                 <source src="https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69d212e684c045c2745a4dc5.mp4" type="video/mp4">
             </video>
         </div>
@@ -916,16 +916,38 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             updateTestimonials();
         });
 
-        // ===== Auto-play carousels =====
-        setInterval(() => {
-            overviewIndex = (overviewIndex + 1) % overviewTotal;
-            updateOverview();
-        }, 8000);
+        // ===== Swipe support for carousels =====
+        function addSwipe(element, onLeft, onRight) {
+            let startX = 0;
+            let startY = 0;
+            element.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+                startY = e.touches[0].clientY;
+            }, { passive: true });
+            element.addEventListener('touchend', (e) => {
+                const dx = e.changedTouches[0].clientX - startX;
+                const dy = e.changedTouches[0].clientY - startY;
+                if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+                    if (dx < 0) onLeft();
+                    else onRight();
+                }
+            }, { passive: true });
+        }
 
-        setInterval(() => {
-            testimonialsIndex = (testimonialsIndex + 1) % testimonialsTotal;
-            updateTestimonials();
-        }, 7000);
+        // Overview carousel swipe
+        const overviewWrapper = document.querySelector('.overview__image-wrapper');
+        if (overviewWrapper) {
+            addSwipe(overviewWrapper,
+                () => { overviewIndex = (overviewIndex + 1) % overviewTotal; updateOverview(); },
+                () => { overviewIndex = (overviewIndex - 1 + overviewTotal) % overviewTotal; updateOverview(); }
+            );
+        }
+
+        // Testimonials carousel swipe
+        addSwipe(testimonialsTrack,
+            () => { testimonialsIndex = (testimonialsIndex + 1) % testimonialsTotal; updateTestimonials(); },
+            () => { testimonialsIndex = (testimonialsIndex - 1 + testimonialsTotal) % testimonialsTotal; updateTestimonials(); }
+        );
 
         // ===== Booking Modal =====
         const bookingModal = document.getElementById('bookingModal');
