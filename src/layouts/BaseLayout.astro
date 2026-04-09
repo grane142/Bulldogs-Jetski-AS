@@ -989,6 +989,105 @@ const { title, description } = Astro.props;
             color: var(--blue);
         }
 
+        /* ========== ADDONS TABLE ========== */
+        .addons-table {
+            padding: 40px;
+            border: 1px solid var(--border-dark);
+            border-radius: 16px;
+            background: #F8F8F8;
+        }
+
+        .addons-table__header {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .addons-table__title {
+            font-family: var(--font-geist);
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--black);
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .addons-table__subtitle {
+            font-family: var(--font-inter);
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--gray-mid);
+        }
+
+        .addons-table__grid {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .addons-table__grid th {
+            font-family: var(--font-inter);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--gray-mid);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-align: left;
+            padding: 12px 16px;
+            border-bottom: 2px solid var(--border-dark);
+        }
+
+        .addons-table__grid th:not(:first-child) {
+            text-align: right;
+        }
+
+        .addons-table__grid td {
+            font-family: var(--font-inter);
+            font-size: 15px;
+            font-weight: 400;
+            color: var(--black);
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .addons-table__grid td:not(:first-child) {
+            text-align: right;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .addons-table__grid tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .addons-table__grid tbody tr:hover {
+            background: rgba(0, 0, 0, 0.02);
+        }
+
+        .addons-table__note {
+            font-family: var(--font-inter);
+            font-size: 13px;
+            font-weight: 300;
+            color: var(--gray-mid);
+            text-align: center;
+            margin-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .addons-table {
+                padding: 24px 16px;
+            }
+
+            .addons-table__grid th,
+            .addons-table__grid td {
+                padding: 10px 8px;
+                font-size: 14px;
+            }
+
+            .addons-table__grid th {
+                font-size: 11px;
+            }
+        }
+
         /* ========== INTERIOR/FEATURE SECTION ========== */
         .feature {
             position: relative;

@@ -118,9 +118,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <section class="overview" id="overview">
         <div class="container">
             <div class="overview__header animate-on-scroll">
-                <p class="overview__label">Vannscooter Oversikt</p>
-                <h2 class="overview__boat-name" id="overviewName">Yamaha WaveRunner</h2>
-                <p class="overview__boat-desc" id="overviewDesc">Perfekt for familier og nybegynnere. Stabil, komfortabel vannscooter med plass til 3 passasjerer og enkel håndtering på åpent vann.</p>
+                <p class="overview__label">Vår Vannscooter</p>
+                <h2 class="overview__boat-name" id="overviewName">Sea-Doo Spark</h2>
+                <p class="overview__boat-desc" id="overviewDesc">Lett, kompakt og utrolig morsom. Sea-Doo Spark 2-up med Rotax 900 HO ACE motor og iBR bremsesystem — enkel å håndtere, drivstoffgjerrig og garantert moro på vannet.</p>
                 <a href="#contact" class="overview__boat-btn">
                     Se Mer
                     <svg viewBox="0 0 16 16" fill="none" width="16" height="16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -136,21 +136,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <svg viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </button>
                 </div>
-                <img id="overviewImage" src="https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69c538594880be32be7897a3.webp" alt="Yamaha WaveRunner" loading="lazy">
+                <img id="overviewImage" src="https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69d67fd4f7bfdb83df332371.jpeg" alt="Sea-Doo Spark" loading="lazy">
             </div>
 
             <div class="overview__stats animate-on-scroll animate-delay-2">
                 <div class="overview__stat">
                     <div class="overview__stat-label">Motor</div>
-                    <div class="overview__stat-value" id="overviewStat1">180 HK</div>
+                    <div class="overview__stat-value" id="overviewStat1">90 HK</div>
                 </div>
                 <div class="overview__stat">
                     <div class="overview__stat-label">Topphastighet</div>
-                    <div class="overview__stat-value" id="overviewStat2">105 km/t</div>
+                    <div class="overview__stat-value" id="overviewStat2">80 km/t</div>
                 </div>
                 <div class="overview__stat">
                     <div class="overview__stat-label">Passasjerer</div>
-                    <div class="overview__stat-value" id="overviewStat3">Opptil 3</div>
+                    <div class="overview__stat-value" id="overviewStat3">Opptil 2</div>
                 </div>
             </div>
         </div>
@@ -291,6 +291,51 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         </a>
                     </div>
                 </div>
+            </div>
+
+            <!-- Tilleggsutstyr -->
+            <div class="addons-table animate-on-scroll" style="margin-top:60px;">
+                <div class="addons-table__header">
+                    <h3 class="addons-table__title">Tilleggsutstyr</h3>
+                    <p class="addons-table__subtitle">Legg til ekstra moro — lei utstyr sammen med vannscooteren</p>
+                </div>
+                <table class="addons-table__grid">
+                    <thead>
+                        <tr>
+                            <th>Utstyr</th>
+                            <th>Per time</th>
+                            <th>Per dag</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Badering / Tube</td>
+                            <td>200,-</td>
+                            <td>500,-</td>
+                        </tr>
+                        <tr>
+                            <td>Vannski</td>
+                            <td>250,-</td>
+                            <td>600,-</td>
+                        </tr>
+                        <tr>
+                            <td>Wakeboard</td>
+                            <td>250,-</td>
+                            <td>600,-</td>
+                        </tr>
+                        <tr>
+                            <td>Snorkelutstyr</td>
+                            <td>100,-</td>
+                            <td>250,-</td>
+                        </tr>
+                        <tr>
+                            <td>Vanntett Bluetooth-høyttaler</td>
+                            <td>100,-</td>
+                            <td>200,-</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="addons-table__note">Alle priser eks. mva. Tillegg bestilles ved booking.</p>
             </div>
 
             <!-- Områder -->
@@ -841,67 +886,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         });
 
         // ===== Overview Single-Boat Carousel =====
-        const boatData = [
-            {
-                name: 'Yamaha WaveRunner',
-                desc: 'Perfekt for familier og nybegynnere. Stabil, komfortabel vannscooter med plass til 3 passasjerer og enkel håndtering på åpent vann.',
-                image: 'https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69c538594880be32be7897a3.webp',
-                stat1: '180 HK', stat2: '105 km/t', stat3: 'Opptil 3'
-            },
-            {
-                name: 'Sea-Doo GTX',
-                desc: 'Kraftig og stilfull vannscooter med avansert teknologi for en komfortabel og spennende kjøreopplevelse på sjøen.',
-                image: 'https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69d216d53d829c73b2383add.jpg',
-                stat1: '230 HK', stat2: '110 km/t', stat3: 'Opptil 3'
-            },
-            {
-                name: 'Kawasaki Ultra 310',
-                desc: 'Den ultimate kraftpakken. Uovertruffen ytelse og presisjon for erfarne kjørere som søker ren adrenalin.',
-                image: 'https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69d216d53d829c73b2383adc.jpg',
-                stat1: '310 HK', stat2: '120 km/t', stat3: 'Opptil 3'
-            },
-            {
-                name: 'Yamaha FX Cruiser',
-                desc: 'Luksus på vannet. Premium komfort, stabil kjøring og kraftig motor gjør dette til den perfekte cruiser-opplevelsen.',
-                image: 'https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69d216d54cde4bbc2aca05e3.jpg',
-                stat1: '250 HK', stat2: '112 km/t', stat3: 'Opptil 3'
-            },
-            {
-                name: 'Sea-Doo RXP-X',
-                desc: 'Bygget for fart og konkurranser. Rå kraft og responsiv styring gir den mest intense vannscooteropplevelsen.',
-                image: 'https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69d217154cde4bbc2aca0d6c.jpg',
-                stat1: '300 HK', stat2: '118 km/t', stat3: 'Opptil 2'
-            }
+        // Sea-Doo Spark image gallery
+        const sparkImages = [
+            'https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69d67fd4f7bfdb83df332371.jpeg',
+            'https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69d67fd4f7bfdb83df332374.jpeg',
+            'https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69d67fd43d829c73b2df1663.jpeg',
+            'https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69d67fd4f5ebf27de34de824.jpeg',
+            'https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69d216d53d829c73b2383add.jpg',
+            'https://assets.cdn.filesafe.space/qVvcmGRblTyzZyqPlbTr/media/69d216d53d829c73b2383adc.jpg'
         ];
 
         const overviewPrev = document.getElementById('overviewPrev');
         const overviewNext = document.getElementById('overviewNext');
-        const overviewName = document.getElementById('overviewName');
-        const overviewDesc = document.getElementById('overviewDesc');
         const overviewImage = document.getElementById('overviewImage');
-        const overviewStat1 = document.getElementById('overviewStat1');
-        const overviewStat2 = document.getElementById('overviewStat2');
-        const overviewStat3 = document.getElementById('overviewStat3');
         let overviewIndex = 0;
-        const overviewTotal = boatData.length;
+        const overviewTotal = sparkImages.length;
 
         function updateOverview() {
-            const boat = boatData[overviewIndex];
-            overviewName.style.opacity = '0';
-            overviewDesc.style.opacity = '0';
             overviewImage.style.opacity = '0';
 
             setTimeout(() => {
-                overviewName.textContent = boat.name;
-                overviewDesc.textContent = boat.desc;
-                overviewImage.src = boat.image;
-                overviewImage.alt = boat.name;
-                overviewStat1.textContent = boat.stat1;
-                overviewStat2.textContent = boat.stat2;
-                overviewStat3.textContent = boat.stat3;
-
-                overviewName.style.opacity = '1';
-                overviewDesc.style.opacity = '1';
+                overviewImage.src = sparkImages[overviewIndex];
+                overviewImage.alt = 'Sea-Doo Spark';
                 overviewImage.style.opacity = '1';
             }, 300);
         }
