@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+    title="Siden finnes ikke (404) | Bulldogs Jetski"
+    description="Denne siden finnes ikke. Gå tilbake til forsiden for å booke vannscooter med Bulldogs Jetski."
+    noindex
+>
+    <main class="notfound">
+        <div class="container">
+            <div class="notfound__card">
+                <span class="section-label section-label--dark notfound__code">Feil 404</span>
+                <h1 class="notfound__title">Oops — denne bølgen tok du visst feil av.</h1>
+                <p class="notfound__text">Siden du lette etter finnes ikke, eller så har den seilt videre. Sett kursen tilbake til forsiden, så finner vi vannscooteren din.</p>
+                <a href="/" class="btn-primary notfound__btn">
+                    Tilbake til forsiden
+                    <span class="arrow-icon">
+                        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </a>
+                <p class="notfound__phone">Trenger du hjelp? Ring oss på <a href="tel:+4745034283">45 03 42 83</a></p>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        .notfound {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:
+                radial-gradient(circle at 50% 0%, rgba(0,75,145,0.10), transparent 60%),
+                var(--off-white);
+            padding: 120px 0;
+        }
+
+        .notfound__card {
+            max-width: 560px;
+            margin: 0 auto;
+            text-align: center;
+            background: var(--white);
+            border: 1px solid var(--border-dark);
+            border-radius: 20px;
+            padding: 56px 48px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.08);
+        }
+
+        .notfound__code {
+            margin-bottom: 28px;
+        }
+
+        .notfound__title {
+            font-family: var(--font-geist);
+            font-size: clamp(28px, 5vw, 40px);
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+            color: var(--black);
+            margin-bottom: 16px;
+        }
+
+        .notfound__text {
+            font-family: var(--font-inter);
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--gray-mid);
+            max-width: 420px;
+            margin: 0 auto 36px;
+        }
+
+        .notfound__btn {
+            justify-content: center;
+        }
+
+        .notfound__phone {
+            font-family: var(--font-inter);
+            font-size: 14px;
+            font-weight: 300;
+            color: var(--gray-text);
+            margin-top: 28px;
+        }
+
+        .notfound__phone a {
+            color: var(--blue);
+            font-weight: 500;
+        }
+
+        @media (max-width: 640px) {
+            .notfound {
+                padding: 80px 0;
+            }
+
+            .notfound__card {
+                padding: 40px 24px;
+            }
+        }
+    </style>
+</BaseLayout>

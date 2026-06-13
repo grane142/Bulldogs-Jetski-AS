@@ -1,0 +1,28 @@
+# Bulldogs Jetski AS
+
+Bulldogs Jetski AS er en norsk utleietjeneste for vannscooter med fokus på sikkerhet, kvalitet og uforglemmelige opplevelser på vannet. Vi leverer vannscootere med sikkerhetsutstyr og opplæring, og dekker Oslofjorden med levering til Oslo, Asker og Drøbak.
+
+## Viktige sider
+- Forside: https://bulldogs-jetski-nettside.netlify.app/
+- Vannscootere: https://bulldogs-jetski-nettside.netlify.app/#overview
+- Priser og pakker: https://bulldogs-jetski-nettside.netlify.app/#discover
+- Anmeldelser: https://bulldogs-jetski-nettside.netlify.app/#testimonials
+- Kontakt og booking: https://bulldogs-jetski-nettside.netlify.app/#contact
+- Personvernerklæring: https://bulldogs-jetski-nettside.netlify.app/personvern
+
+## Tjenester
+- Timeleie av vannscooter (2 timer på vannet)
+- Halvdagsleie (opptil 4 timer)
+- Heldagsleie (full dag på vannet)
+- Helgutleie (ved forespørsel)
+- Sikkerhetsutstyr inkludert ved all leie
+- Opplæring og instruksjon før hver tur
+- Levering innenfor Oslo, Asker og Drøbak
+- Tilleggsutstyr: badering/tube, vannski, wakeboard, snorkelutstyr og vanntett Bluetooth-høyttaler
+- Gruppearrangementer og bedriftseventer
+
+## Kontakt
+- Telefon: 45 03 42 83
+- E-post: kontakt@bulldogsjetski.no
+- Org.nr.: 836 511 972
+- Områder: Oslo, Asker og Drøbak (Oslofjorden)
